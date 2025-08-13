@@ -10,6 +10,9 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.get('/send-email', (_: Request, res: Response) => {
+  res.send("Hello!.");
+});
 app.get('/send-email', (req: Request, res: Response) => {
   useEmailHelper().send();
   res.send("Done!.");
